@@ -1,60 +1,44 @@
+# Custom File Encryption/Decryption Tool
 
-# E-commerce Backend Engine
+## 🔒 Secure File Encryption/Decryption Tool (AES-256)
 
-## 🛒 RESTful E-commerce Backend API
-
-A conceptual RESTful API backend built with Python (Flask/Django) for an e-commerce platform. It provides essential services for user management, product catalog, shopping carts, and order processing, designed for frontend integration.
+A command-line utility in Python for advanced file encryption and decryption. It employs AES-256 symmetric encryption with robust PBKDF2 key derivation from a user-defined passphrase, ensuring strong data confidentiality.
 
 ---
 
 ### ✨ Features
 
-- User authentication (registration, login, RBAC for customers/admins).
-- Product management (CRUD operations).
-- Shopping cart functionality (add/remove items, update quantity).
-- Order processing and history.
-- Stock management and validation.
+- Encrypts files using AES-256 in CBC mode.  
+- Securely derives keys from passwords using PBKDF2 with SHA256.  
+- Generates unique cryptographic salts and Initialization Vectors (IVs) per encryption.  
+- Supports large files by processing data in chunks.  
+- Includes comprehensive error handling for file operations and password validation.
 
 ---
 
 ### 💻 Technologies
 
 - Python 3.x  
-- Flask / Django (Web Framework)  
-- PostgreSQL / SQLite (Database)  
-- SQLAlchemy / Django ORM (ORM)  
-- bcrypt / Django's hashing (Authentication)
+- `cryptography` library (AES, PBKDF2, padding primitives)  
+- `secrets` module (Cryptographically strong randomness)
 
 ---
 
 ### 🚀 Getting Started
 
-1. Clone the repository.
+1. Clone the repository (ensure `encrypt_tool.py` is present).
 2. Create and activate a virtual environment.
-3. Install dependencies (choose based on Flask or Django):
+3. Install dependencies:
 
-   **For Flask example:**
    ```bash
-   pip install Flask SQLAlchemy Flask-Migrate bcrypt
+   pip install cryptography
    ```
 
-   **For Django example:**
+4. Run the tool:
+
    ```bash
-   pip install Django djangorestframework
+   python encrypt_tool.py
    ```
 
-4. Configure database and run migrations (specifics vary by framework).
-
-5. Run the server:
-
-   **Flask:**
-   ```bash
-   flask run
-   ```
-
-   **Django:**
-   ```bash
-   python manage.py runserver
-   ```
-
-
+---
+```
